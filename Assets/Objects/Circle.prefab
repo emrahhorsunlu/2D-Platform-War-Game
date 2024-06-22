@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5475146839702742594}
   - component: {fileID: 6090453215631252752}
   - component: {fileID: 4626064543056923843}
-  - component: {fileID: 7039238698616815501}
   m_Layer: 6
   m_Name: Circle
   m_TagString: AllyCharacter
@@ -163,16 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetX: 50
-  moveSpeed: 0
---- !u!114 &7039238698616815501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6196528579612294970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c066d413b118e4da413845cbcf4566, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  troopDataSO: {fileID: 0}

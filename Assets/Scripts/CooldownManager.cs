@@ -13,24 +13,18 @@ public class CooldownManager : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager");
     }
-    public void StartCooldown()
+    public void StartCooldown(TroopDataSO troopDataSO)
     {
-        StartCoroutine(ButtonCooldown());
+        StartCoroutine(ButtonCooldown(troopDataSO));
     }
 
-    private IEnumerator ButtonCooldown()
+    private IEnumerator ButtonCooldown(TroopDataSO troopDataSO)
     {
-        if (this.gameObject.name == "Card1")
-            currentCooldownTime = 5f;
-        else if (this.gameObject.name == "Card2")
-            currentCooldownTime = 7f;
-        else if (this.gameObject.name == "Card3")
-            currentCooldownTime = 10f;
 
-        gameManager.GetComponent<CardController>().OnCardButtonClicked(this.gameObject.name);
         this.gameObject.GetComponent<Button>().interactable = false;
         this.gameObject.GetComponent<Button>().enabled = false;
 
+        currentCooldownTime = troopDataSO.cooldownTime;
         while (currentCooldownTime > 0)
         {
             this.gameObject.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().text = currentCooldownTime.ToString("F1") + "s";

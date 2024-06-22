@@ -167,12 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d853c8c0432e449449ec50dad6201a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warrior: {fileID: 3613334464285509161, guid: 1fba4a6001546a248b06642c1640adfd, type: 3}
-  archer: {fileID: 6196528579612294970, guid: da04f17b7c72eba4195861bac7ac24e9, type: 3}
-  cavalry: {fileID: 7134247834436726316, guid: d822e076ab81e4a489dadd34b1eb6266, type: 3}
-  card1Btn: {fileID: 0}
-  card2Btn: {fileID: 0}
-  card3Btn: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +289,6 @@ GameObject:
   - component: {fileID: 762596175}
   - component: {fileID: 762596174}
   - component: {fileID: 762596173}
-  - component: {fileID: 762596172}
   - component: {fileID: 762596176}
   m_Layer: 5
   m_Name: Card2
@@ -324,35 +317,6 @@ RectTransform:
   m_AnchoredPosition: {x: -258.47467, y: -204.1403}
   m_SizeDelta: {x: 108.534, y: 84.4044}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &762596172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762596170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 142964838}
-          m_TargetAssemblyTypeName: CardController, Assembly-CSharp
-          m_MethodName: OnCardButtonClicked
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Card2
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &762596173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,13 +361,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 142964838}
+        m_TargetAssemblyTypeName: CardController, Assembly-CSharp
+        m_MethodName: OnCardButtonClicked2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 9ff1e70b515bb5544bf3a46b9eee9d3a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TroopDataSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 762596176}
         m_TargetAssemblyTypeName: CooldownManager, Assembly-CSharp
         m_MethodName: StartCooldown
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 9ff1e70b515bb5544bf3a46b9eee9d3a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TroopDataSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -912,7 +888,6 @@ GameObject:
   - component: {fileID: 1448336315}
   - component: {fileID: 1448336314}
   - component: {fileID: 1448336313}
-  - component: {fileID: 1448336312}
   - component: {fileID: 1448336316}
   m_Layer: 5
   m_Name: Card1
@@ -941,35 +916,6 @@ RectTransform:
   m_AnchoredPosition: {x: -389.733, y: -204.1403}
   m_SizeDelta: {x: 108.534, y: 84.4044}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1448336312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448336310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 142964838}
-          m_TargetAssemblyTypeName: CardController, Assembly-CSharp
-          m_MethodName: OnCardButtonClicked
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Card1
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1448336313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,13 +960,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 142964838}
+        m_TargetAssemblyTypeName: CardController, Assembly-CSharp
+        m_MethodName: OnCardButtonClicked2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3e4a6869cf1c1994ea331c40a081da3b, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TroopDataSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1448336316}
         m_TargetAssemblyTypeName: CooldownManager, Assembly-CSharp
         m_MethodName: StartCooldown
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 3e4a6869cf1c1994ea331c40a081da3b, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TroopDataSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1089,7 +1047,6 @@ GameObject:
   - component: {fileID: 1690268205}
   - component: {fileID: 1690268204}
   - component: {fileID: 1690268203}
-  - component: {fileID: 1690268202}
   - component: {fileID: 1690268206}
   m_Layer: 5
   m_Name: Card3
@@ -1118,35 +1075,6 @@ RectTransform:
   m_AnchoredPosition: {x: -126.19882, y: -204.1403}
   m_SizeDelta: {x: 108.534, y: 84.4044}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1690268202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690268200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 142964838}
-          m_TargetAssemblyTypeName: CardController, Assembly-CSharp
-          m_MethodName: OnCardButtonClicked
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Card3
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1690268203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,13 +1119,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 142964838}
+        m_TargetAssemblyTypeName: CardController, Assembly-CSharp
+        m_MethodName: OnCardButtonClicked2
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 17fd9f01f6f3fdd458d5c8218e1d38f1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TroopDataSO, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1690268206}
         m_TargetAssemblyTypeName: CooldownManager, Assembly-CSharp
         m_MethodName: StartCooldown
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 17fd9f01f6f3fdd458d5c8218e1d38f1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TroopDataSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

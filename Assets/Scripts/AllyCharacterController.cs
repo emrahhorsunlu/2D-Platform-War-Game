@@ -8,12 +8,11 @@ public class AllyCharacterController : MonoBehaviour
 {
     public float targetX = 50f;         // Hedef X pozisyonu      // Hareket hızı
     private float startX = -5f;
-    public Troop troop;
+    public TroopDataSO troopDataSO;
 
     void Start()
     {
         transform.position = new Vector3(startX, transform.position.y, transform.position.z);
-        troop = GetComponent<Troop>();
     }
 
     void Update()
@@ -21,7 +20,7 @@ public class AllyCharacterController : MonoBehaviour
         if (transform.position.x < targetX)
         {
             // Hareket hızını belirli bir hızda sabit tutarak hareket ettir
-            float moveDistance = troop.speed * Time.deltaTime;
+            float moveDistance = troopDataSO.speed * Time.deltaTime;
             float newX = transform.position.x + moveDistance;
 
             // Hedefe ulaştığında X pozisyonunu hedefe eşitle
@@ -32,7 +31,6 @@ public class AllyCharacterController : MonoBehaviour
             }
             transform.position = new Vector3(newX, transform.position.y, transform.position.z);
         }
-
     }
 
 }
