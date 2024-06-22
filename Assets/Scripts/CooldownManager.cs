@@ -2,21 +2,32 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using JetBrains.Annotations;
 
 public class CooldownManager : MonoBehaviour
 {
     public GameObject gameManager;
-    public void StartCooldown()
+    float currentCooldownTime;
+
+    void Start()
     {
         gameManager = GameObject.Find("GameManager");
+    }
+    public void StartCooldown()
+    {
         StartCoroutine(ButtonCooldown());
     }
 
     private IEnumerator ButtonCooldown()
     {
-        Debug.Log(this.gameObject.name);
+        if (this.gameObject.name == "Card1")
+            currentCooldownTime = 5f;
+        else if (this.gameObject.name == "Card2")
+            currentCooldownTime = 7f;
+        else if (this.gameObject.name == "Card3")
+            currentCooldownTime = 10f;
+
         gameManager.GetComponent<CardController>().OnCardButtonClicked(this.gameObject.name);
-        float currentCooldownTime = 10f; // Cooldown süresi
         this.gameObject.GetComponent<Button>().interactable = false;
         this.gameObject.GetComponent<Button>().enabled = false;
 
@@ -26,7 +37,6 @@ public class CooldownManager : MonoBehaviour
             currentCooldownTime -= Time.deltaTime;
             yield return null;
         }
-
         this.gameObject.GetComponent<Button>().interactable = true;
         this.gameObject.GetComponent<Button>().enabled = true;
         this.gameObject.GetComponent<Button>().GetComponentInChildren<TextMeshProUGUI>().text = " ";

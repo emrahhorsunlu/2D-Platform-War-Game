@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class CardController : MonoBehaviour
 {
@@ -17,30 +18,7 @@ public class CardController : MonoBehaviour
 
     public void OnCardButtonClicked(string buttonName)
     {
-
-        if (PlayerPrefs.GetString("StageArmy") == "Bronze")
-        {
-
-            if (buttonName == "Card1" && card1Btn.interactable == true)
-            {
-                //Debug.Log(buttonName + " button clicked! " + PlayerPrefs.GetString("StageArmy"));
-                SpawnCapsule(buttonName);
-
-            }
-            else if (buttonName == "Card2" && card2Btn.interactable == true)
-            {
-                //Debug.Log(buttonName + " button clicked! " + PlayerPrefs.GetString("StageArmy"));
-                SpawnCapsule(buttonName);
-
-            }
-            else if (buttonName == "Card3" && card3Btn.interactable == true)
-            {
-                //Debug.Log(buttonName + " button clicked! " + PlayerPrefs.GetString("StageArmy"));
-                SpawnCapsule(buttonName);
-
-            }
-
-        }
+        SpawnCapsule(buttonName);
     }
 
     void SpawnCapsule(string CardName)
@@ -51,6 +29,14 @@ public class CardController : MonoBehaviour
             Quaternion spawnRotation = Quaternion.identity;   // Rotasyon olmadan başlangıç rotasyonu
 
             GameObject capsule = Instantiate(warrior, spawnPosition, spawnRotation);
+            Troop troop = capsule.GetComponent<Troop>();
+            troop.type = Type.warrior;
+            troop.speed = 0.5f;
+            troop.damage = 50f;
+            troop.armor = 5f;
+            troop.health = 100f;
+            troop.price = 20;
+            troop.character = capsule;
         }
         else if (CardName == "Card2")
         {
@@ -58,6 +44,14 @@ public class CardController : MonoBehaviour
             Quaternion spawnRotation = Quaternion.identity;   // Rotasyon olmadan başlangıç rotasyonu
 
             GameObject capsule = Instantiate(archer, spawnPosition, spawnRotation);
+            Troop troop = capsule.GetComponent<Troop>();
+            troop.type = Type.archer;
+            troop.speed = 0.7f;
+            troop.damage = 75f;
+            troop.armor = 2f;
+            troop.health = 100f;
+            troop.price = 50;
+            troop.character = capsule;
         }
         else if (CardName == "Card3")
         {
@@ -65,6 +59,15 @@ public class CardController : MonoBehaviour
             Quaternion spawnRotation = Quaternion.identity;   // Rotasyon olmadan başlangıç rotasyonu
 
             GameObject capsule = Instantiate(cavalry, spawnPosition, spawnRotation);
+            capsule.GetComponent<Troop>().type = Type.cavalry;
+            Troop troop = capsule.GetComponent<Troop>();
+            troop.type = Type.cavalry;
+            troop.speed = 1f;
+            troop.damage = 100f;
+            troop.armor = 15f;
+            troop.health = 100f;
+            troop.price = 100;
+            troop.character = capsule;
         }
 
     }
