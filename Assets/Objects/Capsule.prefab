@@ -162,4 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetX: 50
-  moveSpeed: 1
+  troopDataSO: {fileID: 0}

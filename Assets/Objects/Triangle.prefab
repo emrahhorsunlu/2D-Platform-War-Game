@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetX: 50
-  moveSpeed: 1.3
+  troopDataSO: {fileID: 0}
 --- !u!50 &-8054171655806243313
 Rigidbody2D:
   serializedVersion: 4

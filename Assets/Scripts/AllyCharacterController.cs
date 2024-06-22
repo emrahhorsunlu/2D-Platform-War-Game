@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AllyCharacterController : MonoBehaviour
 {
-    public float targetX = 50f;         // Hedef X pozisyonu
-    public float moveSpeed = 2f;        // Hareket hızı
-
-    private float startX = -5f;         // Başlangıç X pozisyonu
+    public float targetX = 50f;         // Hedef X pozisyonu      // Hareket hızı
+    private float startX = -5f;
+    public TroopDataSO troopDataSO;
 
     void Start()
     {
@@ -16,17 +17,18 @@ public class AllyCharacterController : MonoBehaviour
 
     void Update()
     {
-        // Hedefe ulaşıncaya kadar hareket et
         if (transform.position.x < targetX)
         {
             // Hareket hızını belirli bir hızda sabit tutarak hareket ettir
-            float moveDistance = moveSpeed * Time.deltaTime;
+            float moveDistance = troopDataSO.speed * Time.deltaTime;
             float newX = transform.position.x + moveDistance;
 
             // Hedefe ulaştığında X pozisyonunu hedefe eşitle
             if (newX > targetX)
+            {
                 newX = targetX;
-
+                Destroy(gameObject);
+            }
             transform.position = new Vector3(newX, transform.position.y, transform.position.z);
         }
     }
