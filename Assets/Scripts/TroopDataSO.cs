@@ -14,6 +14,7 @@ public class TroopDataSO : ScriptableObject
     public int price;
     public float cooldownTime;
     public TroopDataSO nextTroopData;
+
 }
 public enum Type
 {

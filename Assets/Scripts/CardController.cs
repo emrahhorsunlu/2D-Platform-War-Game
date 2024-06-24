@@ -1,26 +1,31 @@
 using UnityEngine.UI;
 using UnityEngine;
 using Unity.VisualScripting;
+using TMPro;
 
-public class CardController : MonoBehaviour
+public class CardController : MonoSingleton<CardController>
 {
-    // Start is called before the first frame update
+    public TextMeshProUGUI moneyText;
+    public float money, moneyTimer;
+
     void Start()
     {
-        PlayerPrefs.SetString("StageArmy", "Bronze");
+        money = 0;
+        moneyText.text = money.ToString();
     }
-
-    public void OnCardButtonClicked2(TroopDataSO troopDataSO)
+    void Update()
     {
-        SpawnCapsule(troopDataSO);
-    }
-
-    void SpawnCapsule(TroopDataSO troopDataSO)
-    {
-        Vector3 spawnPosition = new Vector3(-5f, -1.85f, 0f);
-        Quaternion spawnRotation = Quaternion.identity;   // Rotasyon olmadan başlangıç rotasyonu
-
-        AllyCharacterController capsule = Instantiate(troopDataSO.characterControllerPrefab, spawnPosition, spawnRotation);
-        capsule.troopDataSO = Instantiate(troopDataSO);
+        if (money >= 0)
+        {
+            // Zamanlayıcıyı güncelle
+            moneyTimer += Time.deltaTime;
+            // Her 1 saniyede para miktarını artır
+            if (moneyTimer >= 1f)
+            {
+                money += 2f;
+                moneyTimer = 0f; // Zamanlayıcıyı sıfırla
+                moneyText.text = money.ToString();
+            }
+        }
     }
 }

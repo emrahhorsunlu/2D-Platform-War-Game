@@ -18,5 +18,6 @@ MonoBehaviour:
   damage: 60
   armor: 30
   health: 100
-  price: 150
+  price: 10
   cooldownTime: 7
+  nextTroopData: {fileID: 0}
