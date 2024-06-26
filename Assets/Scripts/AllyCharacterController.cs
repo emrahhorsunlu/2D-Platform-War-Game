@@ -17,6 +17,10 @@ public class AllyCharacterController : MonoBehaviour
 
     void Update()
     {
+        OnWalk();
+    }
+    public void OnWalk()
+    {
         if (transform.position.x < targetX)
         {
             // Hareket hızını belirli bir hızda sabit tutarak hareket ettir

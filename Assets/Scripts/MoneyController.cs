@@ -3,7 +3,7 @@ using UnityEngine;
 using Unity.VisualScripting;
 using TMPro;
 
-public class CardController : MonoSingleton<CardController>
+public class MoneyController : MonoSingleton<MoneyController>
 {
     public TextMeshProUGUI moneyText;
     public float money, moneyTimer;

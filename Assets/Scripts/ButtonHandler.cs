@@ -10,20 +10,20 @@ public class ButtonHandler : MonoBehaviour
     public TextMeshProUGUI text;
     public Button button;
     public TroopDataSO troopDataSO;
-    public CardController cardController;
+    public MoneyController moneyController;
 
     void Start()
     {
-        cardController = CardController.Instance;
+        moneyController = MoneyController.Instance;
         text.text = troopDataSO.price.ToString();
     }
 
     public void OnCardButtonClicked2()
     {
-        if (cardController.money >= troopDataSO.price)
+        if (moneyController.money >= troopDataSO.price)
         {
-            cardController.money = cardController.money - troopDataSO.price;
-            cardController.moneyText.text = cardController.money.ToString();
+            moneyController.money = moneyController.money - troopDataSO.price;
+            moneyController.moneyText.text = moneyController.money.ToString();
             SpawnCapsule();
             StartCoroutine(ButtonCooldown());
         }
