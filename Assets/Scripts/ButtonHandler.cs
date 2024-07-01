@@ -31,7 +31,7 @@ public class ButtonHandler : MonoBehaviour
     void SpawnCapsule()
     {
         Vector3 spawnPosition = new Vector3(-5f, -1.85f, 0f);
-        Quaternion spawnRotation = Quaternion.identity;   // Rotasyon olmadan başlangıç rotasyonu
+        Quaternion spawnRotation = Quaternion.identity;
 
         AllyCharacterController capsule = Instantiate(troopDataSO.characterControllerPrefab, spawnPosition, spawnRotation);
         capsule.troopDataSO = Instantiate(troopDataSO);
